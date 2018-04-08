@@ -69,8 +69,13 @@ public class CreateGui {
 //      leftPane.setDividerSize(0);
 
     sHistoryPanel = new JPanel(new CardLayout());
-    scroller = new JScrollPane(sHistoryPanel);
+    ObjectModifier anObjectModifier = new ObjectModifier();
+    JSplitPane newHistoryPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, sHistoryPanel, anObjectModifier);
+    newHistoryPanel.setResizeWeight(0.5);
+    newHistoryPanel.setDividerLocation(600);
+    scroller = new JScrollPane(newHistoryPanel);
     scroller.setMinimumSize(new Dimension(300, 600));
+    
 
     sHistoryPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
     scroller.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
@@ -233,6 +238,7 @@ public class CreateGui {
 
     AnimationHistoryUI historyUI = new AnimationHistoryUI(animationHistory);
     sHistoryPanel.add(historyUI.rootComponent(), historyKey, pIndex);
+    sHistoryPanel.add(new ObjectModifier(), "Finally");
     ((CardLayout) sHistoryPanel.getLayout()).show(sHistoryPanel, historyKey);
   }
 
