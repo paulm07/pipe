@@ -110,6 +110,10 @@ public abstract class PetriNetObject
    
    public void select() {
       if (selectable && !selected) {
+    	  
+    	  // TODO: CHANGE THE SUIE PANE TO INCLUDE THIS OBJECT'S DATA
+    	  // END TODO
+    	  
          selected = true;
          repaint();
       }

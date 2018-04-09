@@ -280,7 +280,20 @@ public class ContinuousAnimationPanel extends JPanel {
 
     private void doContinuousAnimation(final int pMaxSteps, final int pDelay) {
         int count = 0;
+        
+        
+        // MODIFIED CODE TO REMOVE CONTINUOUS FIRING ERROR
+        
+        if(mDataLayer.unknown.isEmpty())
+        {
+        	JOptionPane.showMessageDialog(CreateGui.getApp (), "Transitions are missing or are all disabled. Please check your work.");
+        	return;
+        }
+        
+        // END MODIFIED CODE TO REMOVE CONTINUOUS FIRING ERROR
+        
         if (mContinuousRunning == false) {
+        	
             mContinuousRunning = true;
             while (count < pMaxSteps && mContinuousRunning) {
                 doSingleStepAnimation();
@@ -294,6 +307,8 @@ public class ContinuousAnimationPanel extends JPanel {
                     }
                 }
             }
+            
+            
         }
 
     }

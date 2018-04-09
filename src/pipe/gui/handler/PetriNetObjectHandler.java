@@ -9,6 +9,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
 
+import pipe.dataLayer.Arc;
 import pipe.dataLayer.PetriNetObject;
 import pipe.gui.CreateGui;
 import pipe.gui.Grid;
@@ -90,6 +91,14 @@ public class PetriNetObjectHandler
                ((GuiView)contentPane).getSelectionObject().clearSelection();
             }
             myObject.select();
+            
+            // TODO: CHECK RIGHT HERE FOR ADDING myObject's data into SUIE Object Editor Panel
+            
+            if(myObject instanceof Arc)
+            {
+            	System.out.println("THIS IS AN ARC");
+            }
+            
             justSelected = true;
          }
          dragInit = e.getPoint();

@@ -69,18 +69,30 @@ public class CreateGui {
 //      leftPane.setDividerSize(0);
 
     sHistoryPanel = new JPanel(new CardLayout());
+    
+    // MODIFIED CODE
     ObjectModifier anObjectModifier = new ObjectModifier();
-    JSplitPane newHistoryPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, sHistoryPanel, anObjectModifier);
+    
+    scroller = new JScrollPane(sHistoryPanel);
+    scroller.setMinimumSize(new Dimension(300, 600));
+    JSplitPane newHistoryPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, scroller, anObjectModifier);
     newHistoryPanel.setResizeWeight(0.5);
     newHistoryPanel.setDividerLocation(600);
-    scroller = new JScrollPane(newHistoryPanel);
-    scroller.setMinimumSize(new Dimension(300, 600));
+    
+    //JScrollPane new_scroller = new JScrollPane(newHistoryPanel);
+    
+    //scroller = new JScrollPane(newHistoryPanel);
+    //scroller.setMinimumSize(new Dimension(300, 600));
     
 
     sHistoryPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
     scroller.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
 
-    pane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, scroller, appTab);
+    pane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, newHistoryPanel, appTab);
+    
+    pane.setEnabled(false);
+    
+    // END MODIFIED CODE
 
     pane.setContinuousLayout(true);
     pane.setOneTouchExpandable(true);
@@ -240,6 +252,10 @@ public class CreateGui {
     sHistoryPanel.add(historyUI.rootComponent(), historyKey, pIndex);
     sHistoryPanel.add(new ObjectModifier(), "Finally");
     ((CardLayout) sHistoryPanel.getLayout()).show(sHistoryPanel, historyKey);
+  }
+  
+  public static void changeObjectEditorContext()
+  {
   }
 
   public static void showAnimationHistory(final int pIndex) {

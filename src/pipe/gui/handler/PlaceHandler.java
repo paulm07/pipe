@@ -93,6 +93,10 @@ public class PlaceHandler
             ((Place)myObject).showEditor(); 
          }
          else {
+        	 // TODO: CHANGE EDITOR TO THIS PLACE'S CONTEXT
+        	
+        	 //pipe.gui.CreateGui.
+        	 
             int currentMarking = ((Place)myObject).getCurrentMarking();
             UndoManager undoManager = CreateGui.getView().getUndoManager();
             
