@@ -74,10 +74,10 @@ public class CreateGui {
     ObjectModifier anObjectModifier = new ObjectModifier();
     
     scroller = new JScrollPane(sHistoryPanel);
-    scroller.setMinimumSize(new Dimension(300, 600));
+    scroller.setMinimumSize(new Dimension(300, 400));
     JSplitPane newHistoryPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, scroller, anObjectModifier);
     newHistoryPanel.setResizeWeight(0.5);
-    newHistoryPanel.setDividerLocation(600);
+    newHistoryPanel.setDividerLocation(400);
     
     //JScrollPane new_scroller = new JScrollPane(newHistoryPanel);
     
