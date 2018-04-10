@@ -20,6 +20,7 @@ public class CreateGui {
   private static Animator animator;
   private static JTabbedPane appTab;
   private static int freeSpace;
+  private final static int APPGUI_SPLIT_PANE = 2;
 
   private static ArrayList<TabData> tabs = new ArrayList<TabData>();
   private static final HashMap<String, pipe.client.api.model.AnimationHistory> sAnimationHistories = new HashMap<>();
@@ -70,11 +71,26 @@ public class CreateGui {
 
     sHistoryPanel = new JPanel(new CardLayout());
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // MODIFIED CODE
     ObjectModifier anObjectModifier = new ObjectModifier();
     
     scroller = new JScrollPane(sHistoryPanel);
-    scroller.setMinimumSize(new Dimension(300, 400));
+    scroller.setMinimumSize(new Dimension(400, 400));
     JSplitPane newHistoryPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, scroller, anObjectModifier);
     newHistoryPanel.setResizeWeight(0.5);
     newHistoryPanel.setDividerLocation(400);
@@ -94,6 +110,19 @@ public class CreateGui {
     
     // END MODIFIED CODE
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     pane.setContinuousLayout(true);
     pane.setOneTouchExpandable(true);
     pane.setBorder(null); // avoid multiple borders
@@ -105,8 +134,72 @@ public class CreateGui {
 
     appGui.setVisible(true);
     appGui.init();
+    
+
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  public static void changeSUIEEditorPane(JPanel aNewObjectModifier)
+  {
+
+	    
+	    JSplitPane temp = null;
+	    
+	    for(Object e: appGui.getContentPane().getComponents())
+	    {
+	    	if(e instanceof JSplitPane)
+	    	{
+	    		temp = (JSplitPane)e;
+	    	}
+	    	
+	    }
+	    
+	    scroller = new JScrollPane(sHistoryPanel);
+	    scroller.setMinimumSize(new Dimension(400, 400));
+	    JSplitPane newHistoryPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, scroller, aNewObjectModifier);
+	    newHistoryPanel.setResizeWeight(0.5);
+	    newHistoryPanel.setDividerLocation(400);
+	    
+	    temp.setLeftComponent(newHistoryPanel);
+	    
+	    
+	    appGui.repaint();
+	    appGui.revalidate();
+	    //appGui.getContentPane().repaint();
+	   // appGui.getContentPane().revalidate();
+
+	   
   }
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   public static GuiFrame getApp() {  //returns a reference to the application
     return appGui;

@@ -13,13 +13,7 @@ public class ObjectModifier extends JPanel {
 		setBackground(Color.WHITE);
 		setLayout(new CardLayout(0, 0));
 		
-		JTabbedPane ObjectEditorTabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		add(ObjectEditorTabbedPane, "name_30526268090565");
-		
-		JPanel panel = new JPanel();
-		ObjectEditorTabbedPane.addTab("Editor", null, panel, null);
-		
-		JLabel lblDefaultEditorLabel = new JLabel("SUIE Object Editor");
+		JLabel lblDefaultEditorLabel = new JLabel("SUIE Object Modifier");
 		lblDefaultEditorLabel.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblDefaultEditorLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblDefaultEditorLabel, "name_30463073190476");

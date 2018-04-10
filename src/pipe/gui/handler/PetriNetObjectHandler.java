@@ -9,7 +9,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
 
-import pipe.dataLayer.Arc;
+import pipe.gui.*;
+import pipe.dataLayer.*;
 import pipe.dataLayer.PetriNetObject;
 import pipe.gui.CreateGui;
 import pipe.gui.Grid;
@@ -96,7 +97,14 @@ public class PetriNetObjectHandler
             
             if(myObject instanceof Arc)
             {
-            	System.out.println("THIS IS AN ARC");
+            	ArcModifier modifier = new ArcModifier();
+            	
+            	CreateGui.changeSUIEEditorPane(modifier);
+            	
+            }
+            else if(myObject instanceof Place)
+            {
+            	
             }
             
             justSelected = true;
