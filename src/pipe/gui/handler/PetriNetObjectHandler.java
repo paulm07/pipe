@@ -93,11 +93,18 @@ public class PetriNetObjectHandler
             }
             myObject.select();
             
+            
+            
+            
+            
+            
+            
+            
             // TODO: CHECK RIGHT HERE FOR ADDING myObject's data into SUIE Object Editor Panel
             
             if(myObject instanceof Arc)
             {
-            	ArcModifier modifier = new ArcModifier();
+            	ArcModifier modifier = new ArcModifier((Arc)myObject);
             	
             	CreateGui.changeSUIEEditorPane(modifier);
             	
@@ -106,6 +113,25 @@ public class PetriNetObjectHandler
             {
             	
             }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             justSelected = true;
          }

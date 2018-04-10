@@ -169,10 +169,20 @@ public class CreateGui {
 	    temp.setLeftComponent(newHistoryPanel);
 	    
 	    
+//	    scroller = new JScrollPane(sHistoryPanel);
+//	    scroller.setMinimumSize(new Dimension(400, 400));
+//	    JSplitPane newHistoryPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, scroller, aNewObjectModifier);
+//	    //newHistoryPanel.setResizeWeight(0.5);
+//	    //newHistoryPanel.setDividerLocation(400);
+//	    
+//	    
+//	    JSplitPane temp = (JSplitPane)temp_pane.getLeftComponent();
+//	    
+//	    temp.setRightComponent(aNewObjectModifier);
+	    
 	    appGui.repaint();
 	    appGui.revalidate();
-	    //appGui.getContentPane().repaint();
-	   // appGui.getContentPane().revalidate();
+
 
 	   
   }
