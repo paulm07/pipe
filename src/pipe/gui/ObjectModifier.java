@@ -19,9 +19,6 @@ public class ObjectModifier extends JPanel {
 		JPanel panel = new JPanel();
 		ObjectEditorTabbedPane.addTab("Editor", null, panel, null);
 		
-		JPanel panel_1 = new JPanel();
-		ObjectEditorTabbedPane.addTab("Result", null, panel_1, null);
-		
 		JLabel lblDefaultEditorLabel = new JLabel("SUIE Object Editor");
 		lblDefaultEditorLabel.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		lblDefaultEditorLabel.setHorizontalAlignment(SwingConstants.CENTER);
